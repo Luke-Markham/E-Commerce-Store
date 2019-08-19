@@ -28,15 +28,46 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
           ...additionalData
         });
       } catch (error) {
-        console.log("error creating user", error.message);
+        alert("error creating user", error.message);
       }
     }
     return userRef;
   }
 };
 
-firebase.initializeApp(config);
+export const convertCollectionsSnapshotToMap = collections => {
+  const transformedCollection = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+    return {
+      title,
+      items,
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id
+    };
+  });
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
 
+//THIS FUNCTION IS TO AVOID MANUAL ADDING OF COLLECTIONS AND ITEMS TO FIREBASE(firestore)
+
+// export const addCollectionAndDocuments = async (
+//   collectionKey,
+//   objectsToAdd
+// ) => {
+//   const collectionRef = firestore.collection(collectionKey);
+//   console.log(collectionRef);
+//   const batch = firestore.batch();
+//   objectsToAdd.forEach(obj => {
+//     const newDocRef = collectionRef.doc();
+//     batch.set(newDocRef, obj);
+//   });
+//   return await batch.commit();
+// };
+
+firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
