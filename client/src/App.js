@@ -21,7 +21,6 @@ const App = ({ checkUserSession, currentUser }) => {
     checkUserSession();
   }, [checkUserSession]);
 
-  //rebuild attempt
   return (
     <div>
       <GlobalStyle />
