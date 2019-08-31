@@ -1,0 +1,22 @@
+.contact-form {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  @media screen and(max-width: 1000px) {
+    width: 80%;
+  }
+}
+
+.send-btn {
+  width: 50%;
+  margin: 25px auto 0 auto;
+  outline: none;
+}
+
+textarea {
+  margin-top: 45px;
+  padding: 5px 0 0 5px;
+  font-size: 18px;
+  outline: none;
+}

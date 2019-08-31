@@ -4,3 +4,16 @@
   justify-content: space-between;
   margin: 30px auto;
 }
+
+@media screen and (max-width: 1000px) {
+  .sign-in-and-sign-up {
+    flex-direction: column;
+    justify-content: space-between;
+    width: unset;
+    align-items: center;
+  }
+
+  .sign-up {
+    margin-top: 60px;
+  }
+}
