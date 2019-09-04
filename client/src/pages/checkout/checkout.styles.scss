@@ -1,5 +1,5 @@
 .checkout-page {
-  width: 55%;
+  width: 60%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -38,5 +38,11 @@
     margin: 20px 0;
     font-size: 24px;
     color: red;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .checkout-page {
+    width: 90%;
   }
 }
