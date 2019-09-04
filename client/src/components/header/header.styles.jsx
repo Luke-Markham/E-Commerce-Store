@@ -38,11 +38,9 @@ export const OptionsContainer = styled.div`
 export const OptionsLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
-  transition: all 0.1s ease-in
+  transition: all 0.2s ease-out
   &:hover {
-    transform: rotate(10deg);
-  }
-  &:nth-child(2):hover {
-    transform: rotate(-10deg);
+    font-size: 17px;
+    padding-top: 1px;
   }
 `;
