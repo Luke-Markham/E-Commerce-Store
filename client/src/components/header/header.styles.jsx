@@ -41,6 +41,6 @@ export const OptionsLink = styled(Link)`
   transition: all 0.2s ease-out
   &:hover {
     font-size: 17px;
-    padding: 1.1px;
+    padding-top: 1px;
   }
 `;
